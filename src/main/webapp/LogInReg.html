@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Title</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.1.0/css/v4-shims.min.css" integrity="sha512-p++g4gkFY8DBqLItjIfuKJPFvTPqcg2FzOns2BNaltwoCOrXMqRIOqgWqWEvuqsj/3aVdgoEo2Y7X6SomTfUPA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        .outer{
+            min-height: 200px;
+            width:300px;
+            background:linear-gradient(45deg, greenyellow, royalblue);
+            margin: 100px auto;
+            border-radius: 10px;
+            padding: 15px;
+        }
+        .header{
+            height: 50px;
+            width: 100%;
+            /*background: linear-gradient(45deg, blanchedalmond, aqua);*/
+            border-radius: 15px;
+            color: white;
+            text-align: center;
+            line-height: 50px;
+        }
+        #left{
+            height: 50px;
+            width: 50%;
+            float: left;
+            background: black;
+
+        }
+        #right{
+            height: 50px;
+            width: 50%;
+            float: left;
+            background: black;
+        }
+        .a:hover{
+            background: white !important;
+            color: black;
+        }
+        .box{
+            width:95%;
+            height: 40px;
+            border-radius: 5px;
+            border: none;
+            padding-left: 10px;
+            margin-top: 5px;
+        }
+        .btn{
+            width: 100%;
+            height: 40px;
+            border: none;
+            background: black;
+            color: white;
+            margin-top: 5px;
+            border-radius: 5px;
+        }
+        #Login{
+            width: 100%;
+            display: none;
+        }
+        #Register{
+            width: 100%;
+            display: none;
+        }
+        #show
+        {
+            color: grey;
+            position: relative;
+            /*right: 0;*/
+            display: flex;
+            top: 0;
+            right: 0;
+        }
+        #pass2{
+            /*position: relative;*/
+        }
+        .log{
+            width: 100%;
+        }
+    </style>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+</head>
+<body>
+<div class="outer">
+    <div class="header">
+        <div id="left" class="a" onclick="login()">
+            LogIn
+        </div>
+        <div id="right" class="a" onclick="Reg()">
+            Register
+        </div>
+    </div>
+   
+    	<div id="Login" >
+        <h2>Login</h2>
+        <form action="firstserv" method ="post">
+        <div class="log">
+            Email </br>
+            <input type="email" placeholder="Type Your Email..." class="box" name="email"></br>
+            Password </br>
+            <input type="password" id="pass2" placeholder="Type Your Password..."class="box" name="password">
+            <!--<input type="checkbox" onclick="check()">Show Password<br>-->
+            <i class="fa fa-eye-slash" aria-hidden="true" id="show"></i>
+            <button class="btn" type="submit">LogIn</button>
+        </div>
+        </form>
+    </div>
+    
+
+    <div id="Register">
+        <h2 style="text-align: center">Register </h2>
+        Name</br>
+        <input type="text" placeholder="Type Your Name..." class="box"></br>
+        Mobile No. </br>
+        <input type="number" placeholder="Type Your number..." class="box"></br>
+        Email </br>
+        <input type="email" placeholder="Type Your Email..." class="box"></br>
+        Password </br>
+        <input type="password" id="pass1" placeholder="Type Your Password..." class="box"></br>
+        <input type="checkbox" onclick="check()">Show Password<br>
+        <button class="btn">Save</button>
+    </div>
+</div>
+<script>
+    var l= document.getElementById("Login")
+    var r= document.getElementById("Register")
+
+    function login() {
+        l.style.display="block";
+        r.style.display="none";
+    }
+
+    function Reg() {
+
+        r.style.display="block";
+        l.style.display="none";
+    }
+
+    function check() {
+        var x = document.querySelector("#pass1")
+        var y = document.querySelector("#pass2")
+        a=x.type;
+        b=y.type;
+        if(a=="password" || b=="password")
+        {
+            x.type="text";
+            y.type="text";
+        }
+        else
+        {
+            x.type="password";
+            y.type="password";
+        }
+    }
+</script>
+</body>
+</html>
